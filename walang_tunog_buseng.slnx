@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CodenameTunog.Core/CodenameTunog.Core.csproj" />
+  <Project Path="CodenameTunog.UI/CodenameTunog.UI.csproj" />
+</Solution>

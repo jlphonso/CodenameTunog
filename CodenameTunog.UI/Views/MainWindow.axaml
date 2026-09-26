@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="using:FluentAvalonia.UI.Controls"
+        xmlns:vm="using:CodenameTunog.UI.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="CodenameTunog.UI.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="CodenameTunog.UI"
+        MinWidth="800" MinHeight="600">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <ui:FANavigationView x:Name="LeftNav"
+                         PaneDisplayMode="LeftCompact"
+                         IsBackButtonVisible="False"
+                         IsPaneOpen="False"
+                         IsPaneToggleButtonVisible="False"
+                         SelectionChanged="LeftNav_SelectionChanged">
+        <ui:FANavigationView.MenuItems>
+            <ui:FANavigationViewItem Content="Home" Tag="home">
+                <ui:FANavigationViewItem.IconSource>
+                    <ui:FASymbolIconSource Symbol="Home" />
+                </ui:FANavigationViewItem.IconSource>
+            </ui:FANavigationViewItem>
+            <ui:FANavigationViewItem Content="Search" Tag="search">
+                <ui:FANavigationViewItem.IconSource>
+                    <ui:FASymbolIconSource Symbol="Find" />
+                </ui:FANavigationViewItem.IconSource>
+            </ui:FANavigationViewItem>
+        </ui:FANavigationView.MenuItems>
+
+        <TransitioningContentControl x:Name="ContentFrame"
+                                     Content="{Binding CurrentPage}"
+                                     Padding="4" />
+    </ui:FANavigationView>
+</Window>

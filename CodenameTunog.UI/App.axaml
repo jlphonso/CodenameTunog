@@ -1,0 +1,28 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="CodenameTunog.UI.App"
+             x:CompileBindings="True"
+             xmlns:vm="using:CodenameTunog.UI.ViewModels"
+             xmlns:views="using:CodenameTunog.UI.Views"
+             xmlns:vpage="using:CodenameTunog.UI.Views.Pages"
+             xmlns:sty="using:FluentAvalonia.Styling"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <!-- declare all views here -->
+        <DataTemplate DataType="{x:Type vm:MainViewModel}">
+            <views:MainWindow />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+            <vpage:HomePage />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+            <vpage:SettingsPage />
+        </DataTemplate>
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <sty:FluentAvaloniaTheme />
+    </Application.Styles>
+</Application>
