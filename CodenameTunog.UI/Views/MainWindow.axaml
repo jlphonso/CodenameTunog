@@ -8,36 +8,46 @@
         x:Class="CodenameTunog.UI.Views.MainWindow"
         x:DataType="vm:MainViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="CodenameTunog.UI"
-        MinWidth="800" MinHeight="600">
+        Title="Audiora"
+        MinWidth="800" MinHeight="600"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaTitleBarHeightHint="40"
+        WindowDecorations="Full">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainViewModel />
-    </Design.DataContext>
+  <Design.DataContext>
+    <vm:MainViewModel />
+  </Design.DataContext>
 
+  <DockPanel LastChildFill="True">
+    <!-- Topbar -->
+    <Grid WindowDecorationProperties.ElementRole="TitleBar"
+          DockPanel.Dock="Top"
+          Height="40"
+          ColumnDefinitions="*,Auto"
+          Background="{DynamicResource LayerFillColorDefaultBrush}">
+    </Grid>
+
+    <!-- Main Content -->
     <ui:FANavigationView x:Name="LeftNav"
-                         PaneDisplayMode="LeftCompact"
-                         IsBackButtonVisible="False"
-                         IsPaneOpen="False"
-                         IsPaneToggleButtonVisible="False"
-                         SelectionChanged="LeftNav_SelectionChanged">
-        <ui:FANavigationView.MenuItems>
-            <ui:FANavigationViewItem Content="Home" Tag="home">
-                <ui:FANavigationViewItem.IconSource>
-                    <ui:FASymbolIconSource Symbol="Home" />
-                </ui:FANavigationViewItem.IconSource>
-            </ui:FANavigationViewItem>
-            <ui:FANavigationViewItem Content="Search" Tag="search">
-                <ui:FANavigationViewItem.IconSource>
-                    <ui:FASymbolIconSource Symbol="Find" />
-                </ui:FANavigationViewItem.IconSource>
-            </ui:FANavigationViewItem>
-        </ui:FANavigationView.MenuItems>
+                        Background="{DynamicResource LayerFillColorDefaultBrush}"
+                        PaneDisplayMode="LeftCompact"
+                        IsBackButtonVisible="False"
+                        IsPaneOpen="False"
+                        IsPaneToggleButtonVisible="False"
+                        SelectionChanged="LeftNav_SelectionChanged">
+      <ui:FANavigationView.MenuItems>
+        <ui:FANavigationViewItem Content="Home"
+                                Tag="home"
+                                IsSelected="True">
+          <ui:FANavigationViewItem.IconSource>
+            <ui:FASymbolIconSource Symbol="Home" />
+          </ui:FANavigationViewItem.IconSource>
+        </ui:FANavigationViewItem>
+      </ui:FANavigationView.MenuItems>
 
-        <TransitioningContentControl x:Name="ContentFrame"
-                                     Content="{Binding CurrentPage}"
-                                     Padding="4" />
+      <TransitioningContentControl x:Name="ContentFrame"
+                                  Margin="4"
+                                  Content="{Binding CurrentPage}" />
     </ui:FANavigationView>
+  </DockPanel>
 </Window>

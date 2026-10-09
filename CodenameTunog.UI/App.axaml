@@ -7,22 +7,25 @@
              xmlns:vpage="using:CodenameTunog.UI.Views.Pages"
              xmlns:sty="using:FluentAvalonia.Styling"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
-    <Application.DataTemplates>
-        <!-- declare all views here -->
-        <DataTemplate DataType="{x:Type vm:MainViewModel}">
-            <views:MainWindow />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:HomeViewModel}">
-            <vpage:HomePage />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
-            <vpage:SettingsPage />
-        </DataTemplate>
-    </Application.DataTemplates>
+  <Application.DataTemplates>
+    <!-- declare all views here -->
+    <DataTemplate DataType="{x:Type vm:MainViewModel}">
+      <views:MainWindow />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+      <vpage:HomePage />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+      <vpage:SettingsPage />
+    </DataTemplate>
+  </Application.DataTemplates>
 
-    <Application.Styles>
-        <sty:FluentAvaloniaTheme />
-    </Application.Styles>
+  <Application.Styles>
+    <sty:FluentAvaloniaTheme />
+
+    <Style Selector="WindowDrawnDecorations /template/ Button#PART_FullScreenButton">
+      <Setter Property="IsVisible" Value="False"/>
+    </Style>
+  </Application.Styles>
 </Application>
