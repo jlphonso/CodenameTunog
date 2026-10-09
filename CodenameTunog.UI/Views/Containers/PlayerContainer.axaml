@@ -1,15 +1,11 @@
-<ContentPage xmlns="https://github.com/avaloniaui"
+<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ui="using:FluentAvalonia.UI.Controls"
              xmlns:vm="using:CodenameTunog.UI.ViewModels"
              mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="600"
-             x:Class="CodenameTunog.UI.Views.Containers.PlayerContainer"
-             HorizontalAlignment="Center" VerticalAlignment="Center"
-             HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-    
-    <ui:FAFrame>
+             x:Class="CodenameTunog.UI.Views.Containers.PlayerContainer">
 
-    </ui:FAFrame>
-</ContentPage>
+  <Label>Now playing</Label>
+</UserControl>

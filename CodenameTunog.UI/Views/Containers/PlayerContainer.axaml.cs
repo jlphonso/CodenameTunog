@@ -4,7 +4,7 @@ using Avalonia.Markup.Xaml;
 
 namespace CodenameTunog.UI.Views.Containers;
 
-public partial class PlayerContainer : ContentPage
+public partial class PlayerContainer : UserControl
 {
     public PlayerContainer()
     {

@@ -7,9 +7,9 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="CodenameTunog.UI.Views.Pages.SettingsPage"
              x:DataType="vm:SettingsViewModel">
-    <Design.DataContext>
-        <vm:HomeViewModel/>
-    </Design.DataContext>
+  <Design.DataContext>
+    <vm:HomeViewModel/>
+  </Design.DataContext>
 
-    <Label>ts settings page cuhh</Label>
+  <Label>ts settings page cuhh</Label>
 </UserControl>
