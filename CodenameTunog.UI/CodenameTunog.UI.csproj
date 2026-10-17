@@ -7,9 +7,9 @@
 
     <PublishAot>true</PublishAot>
     <EnableAotAnalyzer>true</EnableAotAnalyzer>
-    <PublishTrimmed>true</PublishTrimmed>
     <InvariantGlobalization>true</InvariantGlobalization>
-    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <UseSystemResourceKeys>true</UseSystemResourceKeys>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
 
   <ItemGroup>
